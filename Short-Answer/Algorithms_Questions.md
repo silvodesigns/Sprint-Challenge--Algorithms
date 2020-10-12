@@ -47,10 +47,10 @@ c)  def bunnyEars(bunnies):
 ```
 
 ## Exercise II
+```python
+#Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if #it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. #Devise a strategy to determine the value of f such that the number of dropped + broken eggs is #minimized.
 
-<!-- Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
-
-Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution. -->
+Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
 
 <!---
 GOAL: DETERMINE THE VALUE OF F
@@ -65,14 +65,14 @@ PROBLEM ANALYSIS:
 5) Egg does not get broken if thrown from F or lower
 
 
-HIGH LEVEL ALGORITHM:
+#HIGH LEVEL ALGORITHM:
 
 1) Start at middle of N floor
 2) Drop an Egg from N/2 floor
 3) if it breaks, moves one step lower until it does not break
 4) it it does not break, move one step higher until it does break
 
-MORE DETAILED:
+#MORE DETAILED:
 
 1) Supposed we given the value 10 as N
   N = 10
@@ -87,7 +87,7 @@ MORE DETAILED:
         when it does finally break then F becomes N value
 
 
-Pseudocode:
+#Pseudocode:
 
 N = 10
 current_floor = n // 2
@@ -109,9 +109,6 @@ while F == unknown:
 
 
 
-
-
-
--->
+```
 
 
