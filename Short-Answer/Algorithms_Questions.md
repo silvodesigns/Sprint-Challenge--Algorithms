@@ -42,6 +42,7 @@ c)  def bunnyEars(bunnies):
       return 2 + bunnyEars(bunnies-1) #0(1)+ N
 
        #T = 0(1) + 0(1) + n
+       #0(n)
 ```
 
 ## Exercise II
@@ -108,6 +109,6 @@ while F == unknown: #0(n)
         # So the while loop in worst case scenario, would iterate over more than half
         # of the values given in N in order to find the value of F, best case would only 
         # go over half of N to get F, so since the time of operation depends on the size of N
-        # the longer N is , the longer it would take so is 0(N)
+        # the longer N is , the longer it would take so is 0(log N)
 
 ```

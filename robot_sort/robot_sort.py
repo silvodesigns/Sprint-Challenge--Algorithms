@@ -1,3 +1,4 @@
+
 class SortingRobot:
     def __init__(self, l):
         """
@@ -81,11 +82,13 @@ class SortingRobot:
         Turn on the robot's light
         """
         self._light = "ON"
+
     def set_light_off(self):
         """
         Turn off the robot's light
         """
         self._light = "OFF"
+
     def light_is_on(self):
         """
         Returns True if the robot's light is on and False otherwise.
@@ -96,15 +99,44 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+
+        # create a while loop for can_move_right
+        # create a while loop for can_move_left
+        # while moving left or right, compare held item with item in front
+        while self.can_move_right():  # Returns True if the robot can move right or False if it's at the end of the list
+            # If the held item's value is less, return -1, If either item is None, return None.
+            # if held item is less (-1) or held item is none (has no item) then swap and move right
+            if self.compare_item() is -1 or self.compare_item() is None:
+                # swap item then continue moving right
+                self.swap_item()
+                self.move_right()
+            else:
+                # continue moving right without swapping item
+                self.move_right()
+
+        # While robot can move left
+        while self.can_move_left():  # Returns True if the robot can move left or False if it's at the start of the list
+            # If the held item's value is greater, return 1.
+            # if held item is greater (1) swap item and move left
+            if self.compare_item() is 1:
+                # swap item and then continue moving left
+                self.swap_item()
+                self.move_left()
+            else:
+                # continue moving left without swapping item
+                self.move_left()
+
+        # if the robot is holding an item, continue sort functionality
+        if self._item is not None:
+            self.sort()
 
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1,
+         45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
 
     robot = SortingRobot(l)
 
